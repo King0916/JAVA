@@ -1,0 +1,5 @@
+文件修改后步骤如下
+第一步、git add .
+第二步、git commit -m "init files"
+第三步、git push -u origin master
+第四步、输入用户和密码
