@@ -1,0 +1,529 @@
+moyu@moyu:~$ mkdir JAVA
+moyu@moyu:~$ cd JAVA
+moyu@moyu:~/JAVA$ git init
+已初始化空的 Git 仓库于 /home/moyu/JAVA/.git/
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+
+初始提交
+
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+
+	bin/
+	src/
+
+提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+moyu@moyu:~/JAVA$ git add
+没有指定文件，也没有文件被添加。
+也许您想要执行 'git add .'？
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git add.
+git：'add.' 不是一个 git 命令。参见 'git --help'。
+
+您指的是这个么？
+	add
+moyu@moyu:~/JAVA$ add
+bash: add: 未找到命令
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+
+初始提交
+
+要提交的变更：
+  （使用 "git rm --cached <文件>..." 以取消暂存）
+
+	新文件：   bin/com/caishuzi/CaiShuZi.class
+	新文件：   src/com/caishuzi/CaiShuZi.java
+
+moyu@moyu:~/JAVA$ git commit
+
+*** 请告诉我你是谁。
+
+运行
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+来设置您账号的缺省身份标识。
+如果仅在本仓库设置身份标识，则省略 --global 参数。
+fatal: empty ident name (for <(null)>) not allowed
+moyu@moyu:~/JAVA$ git config --global user.email "khstarwjx@gmail.com"
+moyu@moyu:~/JAVA$ git config --global user.name "King0916"
+moyu@moyu:~/JAVA$ git commit
+使用"fg" 返回nano
+
+[1]+  已停止               git commit
+moyu@moyu:~/JAVA$ git commit
+使用"fg" 返回nano
+
+[2]+  已停止               git commit
+moyu@moyu:~/JAVA$ fg
+git commit
+使用"fg" 返回nano
+
+[2]+  已停止               git commit
+moyu@moyu:~/JAVA$ ssh-keyen -t rsa -C "khstarwjx@gmail.com"
+bash: ssh-keyen: 未找到命令
+moyu@moyu:~/JAVA$ ssh-kegen -t rsa -C "khstarwjx@gmail.com"
+bash: ssh-kegen: 未找到命令
+moyu@moyu:~/JAVA$ ssh-keygen -t rsa -C "khstarwjx@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/moyu/.ssh/id_rsa): 
+Created directory '/home/moyu/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/moyu/.ssh/id_rsa.
+Your public key has been saved in /home/moyu/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:AbhCdNXb9q7LgRT/KTrUADJXnHDZZ3h1l9Fqx6DHytI khstarwjx@gmail.com
+The key's randomart image is:
++---[RSA 2048]----+
+| .. .o+=o+ . ...*|
+|  ..+ oo= o + .oo|
+| .   = .oo + o + |
+|  . .   o+o . = o|
+|   .    S+.+ + . |
+|       ...o.E.   |
+|       .. ooo    |
+|        .o o.    |
+|        ..+o     |
++----[SHA256]-----+
+moyu@moyu:~/JAVA$ cat ~/.ssh/id_rea.pub
+cat: /home/moyu/.ssh/id_rea.pub: 没有那个文件或目录
+moyu@moyu:~/JAVA$ cat~/.ssh/id_rea.pub
+bash: cat~/.ssh/id_rea.pub: 没有那个文件或目录
+moyu@moyu:~/JAVA$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDayLXvmWKyMyTNj7wAgbPe24Rw9ryn5wRvjJ4HlwydFcWP+0IWHc1N2f/Ikfhly6pCClqYH8mNdCZJTvnjvC/HW436XiyB5vsIS/XEzTdD/g5t0oUYH97v0eT8SzMu6dOOOsy2Emei5dVtS9nafDQaPxBud2XuTk4qVrnCIrTw6k87zCmZ5fjtd7ZKXKSKdurMfaufZIySfYzwNaU+bl5139lWN4+G2HN0/iW3BT+RkYsxAHX/b1MKxTKrZz2oaJXoqikGo1IYAafS9YWN+wfgSfWItdEkJTKKRIIb4EfJ2FDrSyEbPKw3JYT/vgvbP+dFHyj6UMJAIrQhLIkYBA2F khstarwjx@gmail.com
+moyu@moyu:~/JAVA$ ^C
+moyu@moyu:~/JAVA$ ^C
+moyu@moyu:~/JAVA$ ^C
+moyu@moyu:~/JAVA$ git remote add origin https://github.com/King0916/JAVA.git
+moyu@moyu:~/JAVA$ git push -u origin master
+error: src refspec master does not match any.
+error: 无法推送一些引用到 'https://github.com/King0916/JAVA.git'
+moyu@moyu:~/JAVA$ git push --rebase origin master
+error: unknown option `rebase'
+用法：git push [<选项>] [<仓库> [<引用规格>...]]
+
+    -v, --verbose         更加详细
+    -q, --quiet           更加安静
+    --repo <仓库>         仓库
+    --all                 推送所有引用
+    --mirror              镜像所有引用
+    -d, --delete          删除引用
+    --tags                推送标签（不能使用 --all or --mirror）
+    -n, --dry-run         演习
+    --porcelain           机器可读的输出
+    -f, --force           强制更新
+    --force-with-lease[=<引用名>:<期望值>]
+                          要求引用旧的取值为设定值
+    --recurse-submodules[=<check|on-demand|no>]
+                          控制子模组的递归推送
+    --thin                使用精简打包
+    --receive-pack <receive-pack>
+                          接收包程序
+    --exec <receive-pack>
+                          接收包程序
+    -u, --set-upstream    设置 git pull/status 的上游
+    --progress            强制显示进度报告
+    --prune               清除本地删除的引用
+    --no-verify           绕过 pre-push 钩子
+    --follow-tags         推送缺失但有关的标签
+    --signed[=<yes|no|if-asked>]
+                          用 GPG 为推送签名
+    --atomic              需要远端支持原子事务
+    -o, --push-option <server-specific>
+                          传输选项
+    -4, --ipv4            只使用 IPv4 地址
+    -6, --ipv6            只使用 IPv6 地址
+
+moyu@moyu:~/JAVA$ git pull --rebase origin master
+fatal: 更新尚未诞生的分支，变更添加至索引。
+moyu@moyu:~/JAVA$ git push -u origin master
+error: src refspec master does not match any.
+error: 无法推送一些引用到 'https://github.com/King0916/JAVA.git'
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+
+初始提交
+
+要提交的变更：
+  （使用 "git rm --cached <文件>..." 以取消暂存）
+
+	新文件：   bin/com/caishuzi/CaiShuZi.class
+	新文件：   src/com/caishuzi/CaiShuZi.java
+	新文件：   "\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git push -u origin master
+error: src refspec master does not match any.
+error: 无法推送一些引用到 'https://github.com/King0916/JAVA.git'
+moyu@moyu:~/JAVA$ git init
+重新初始化已存在的 Git 仓库于 /home/moyu/JAVA/.git/
+moyu@moyu:~/JAVA$ git touch READMEgit
+git：'touch' 不是一个 git 命令。参见 'git --help'。
+moyu@moyu:~/JAVA$ git init
+重新初始化已存在的 Git 仓库于 /home/moyu/JAVA/.git/
+moyu@moyu:~/JAVA$ git commit
+使用"fg" 返回nano
+
+[3]+  已停止               git commit
+moyu@moyu:~/JAVA$ add commit
+bash: add: 未找到命令
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+
+初始提交
+
+要提交的变更：
+  （使用 "git rm --cached <文件>..." 以取消暂存）
+
+	新文件：   bin/com/caishuzi/CaiShuZi.class
+	新文件：   src/com/caishuzi/CaiShuZi.java
+	新文件：   "\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git push -u origin master
+error: src refspec master does not match any.
+error: 无法推送一些引用到 'https://github.com/King0916/JAVA.git'
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+
+初始提交
+
+要提交的变更：
+  （使用 "git rm --cached <文件>..." 以取消暂存）
+
+	新文件：   bin/com/caishuzi/CaiShuZi.class
+	新文件：   src/com/caishuzi/CaiShuZi.java
+	新文件：   "\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git push -u origin master
+error: src refspec master does not match any.
+error: 无法推送一些引用到 'https://github.com/King0916/JAVA.git'
+moyu@moyu:~/JAVA$ git add add.php addok.php conn.php del.php edit.php editok.php ftpsql.sql index.php
+fatal: 路径规格 'add.php' 未匹配任何文件
+moyu@moyu:~/JAVA$ git commit -m "init files"
+[master（根提交） 29b9dcc] init files
+ 3 files changed, 204 insertions(+)
+ create mode 100644 bin/com/caishuzi/CaiShuZi.class
+ create mode 100644 src/com/caishuzi/CaiShuZi.java
+ create mode 100644 "\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+对象计数中: 11, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (4/4), 完成.
+写入对象中: 100% (11/11), 3.95 KiB | 0 bytes/s, 完成.
+Total 11 (delta 0), reused 0 (delta 0)
+To https://github.com/King0916/JAVA.git
+ * [new branch]      master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': 
+Password for 'https://github.com': 
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/King0916/JAVA.git/'
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+无文件要提交，干净的工作区
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ add commit
+bash: add: 未找到命令
+moyu@moyu:~/JAVA$ git commit
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+无文件要提交，干净的工作区
+moyu@moyu:~/JAVA$ git commit
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+未跟踪的文件:
+	wangjiaxing/
+
+提交为空，但是存在尚未跟踪的文件
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+要提交的变更：
+  （使用 "git reset HEAD <文件>..." 以取消暂存）
+
+	新文件：   "wangjiaxing/\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git commit
+使用"fg" 返回nano
+
+[4]+  已停止               git commit
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+要提交的变更：
+  （使用 "git reset HEAD <文件>..." 以取消暂存）
+
+	新文件：   "wangjiaxing/\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git add
+没有指定文件，也没有文件被添加。
+也许您想要执行 'git add .'？
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git commit -m
+error: switch `m' requires a value
+用法：git commit [<选项>] [--] <路径规格>...
+
+    -q, --quiet           提交成功后不显示概述信息
+    -v, --verbose         在提交说明模板里显示差异
+
+提交说明选项
+    -F, --file <文件>     从文件中读取提交说明
+    --author <作者>       提交时覆盖作者
+    --date <日期>         提交时覆盖日期
+    -m, --message <说明>  提交说明
+    -c, --reedit-message <提交>
+                          重用并编辑指定提交的提交说明
+    -C, --reuse-message <提交>
+                          重用指定提交的提交说明
+    --fixup <提交>        使用 autosquash 格式的提交说明用以修正指定的提交
+    --squash <提交>       使用 autosquash 格式的提交说明用以压缩至指定的提交
+    --reset-author        现在将该提交的作者改为我（和 -C/-c/--amend 参数共用）
+    -s, --signoff         添加 Signed-off-by: 签名
+    -t, --template <文件>
+                          使用指定的模板文件
+    -e, --edit            强制编辑提交
+    --cleanup <default>   设置如何删除提交说明里的空格和#注释
+    --status              在提交说明模板里包含状态信息
+    -S, --gpg-sign[=<key-id>]
+                          GPG 提交签名
+
+提交内容选项
+    -a, --all             提交所有改动的文件
+    -i, --include         添加指定的文件到索引区等待提交
+    --interactive         交互式添加文件
+    -p, --patch           交互式添加变更
+    -o, --only            只提交指定的文件
+    -n, --no-verify       绕过 pre-commit 和 commit-msg 钩子
+    --dry-run             显示将要提交的内容
+    --short               以简洁的格式显示状态
+    --branch              显示分支信息
+    --porcelain           机器可读的输出
+    --long                以长格式显示状态（默认）
+    -z, --null            条目以 NUL 字符结尾
+    --amend               修改先前的提交
+    --no-post-rewrite     绕过 post-rewrite 钩子
+    -u, --untracked-files[=<模式>]
+                          显示未跟踪的文件，“模式”的可选参数：all、normal、no。（默认：all）
+
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+要提交的变更：
+  （使用 "git reset HEAD <文件>..." 以取消暂存）
+
+	新文件：   numberGame/.classpath
+	新文件：   numberGame/.project
+	新文件：   numberGame/.settings/org.eclipse.jdt.core.prefs
+	新文件：   numberGame/bin/com/number/AdminOperation.class
+	新文件：   numberGame/bin/com/number/GameStart.class
+	新文件：   numberGame/bin/com/number/InputHelp.class
+	新文件：   numberGame/bin/com/number/Menu.class
+	新文件：   numberGame/bin/com/number/UserOperation.class
+	新文件：   numberGame/src/com/number/AdminOperation.java
+	新文件：   numberGame/src/com/number/GameStart.java
+	新文件：   numberGame/src/com/number/InputHelp.java
+	新文件：   numberGame/src/com/number/Menu.java
+	新文件：   numberGame/src/com/number/UserOperation.java
+	新文件：   "wangjiaxing/\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+要提交的变更：
+  （使用 "git reset HEAD <文件>..." 以取消暂存）
+
+	新文件：   numberGame/.classpath
+	新文件：   numberGame/.project
+	新文件：   numberGame/.settings/org.eclipse.jdt.core.prefs
+	新文件：   numberGame/bin/com/number/AdminOperation.class
+	新文件：   numberGame/bin/com/number/GameStart.class
+	新文件：   numberGame/bin/com/number/InputHelp.class
+	新文件：   numberGame/bin/com/number/Menu.class
+	新文件：   numberGame/bin/com/number/UserOperation.class
+	新文件：   numberGame/src/com/number/AdminOperation.java
+	新文件：   numberGame/src/com/number/GameStart.java
+	新文件：   numberGame/src/com/number/InputHelp.java
+	新文件：   numberGame/src/com/number/Menu.java
+	新文件：   numberGame/src/com/number/UserOperation.java
+	新文件：   "wangjiaxing/\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git commit -m "init files"
+[master 0232b92] init files
+ 14 files changed, 379 insertions(+)
+ create mode 100755 numberGame/.classpath
+ create mode 100755 numberGame/.project
+ create mode 100755 numberGame/.settings/org.eclipse.jdt.core.prefs
+ create mode 100755 numberGame/bin/com/number/AdminOperation.class
+ create mode 100755 numberGame/bin/com/number/GameStart.class
+ create mode 100755 numberGame/bin/com/number/InputHelp.class
+ create mode 100755 numberGame/bin/com/number/Menu.class
+ create mode 100755 numberGame/bin/com/number/UserOperation.class
+ create mode 100755 numberGame/src/com/number/AdminOperation.java
+ create mode 100755 numberGame/src/com/number/GameStart.java
+ create mode 100755 numberGame/src/com/number/InputHelp.java
+ create mode 100755 numberGame/src/com/number/Menu.java
+ create mode 100755 numberGame/src/com/number/UserOperation.java
+ create mode 100644 "wangjiaxing/\346\226\260\345\273\272\346\226\207\346\234\254.txt"
+moyu@moyu:~/JAVA$ git commit -m "init files"
+位于分支 master
+您的分支领先 'origin/master' 共 1 个提交。
+  （使用 "git push" 来发布您的本地提交）
+无文件要提交，干净的工作区
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+对象计数中: 24, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (19/19), 完成.
+写入对象中: 100% (24/24), 8.25 KiB | 0 bytes/s, 完成.
+Total 24 (delta 0), reused 0 (delta 0)
+To https://github.com/King0916/JAVA.git
+   29b9dcc..0232b92  master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+moyu@moyu:~/JAVA$ ^C
+moyu@moyu:~/JAVA$ git commit -m "init files"
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+尚未暂存以备提交的变更：
+	删除：     numberGame/.classpath
+	删除：     numberGame/.project
+	删除：     numberGame/.settings/org.eclipse.jdt.core.prefs
+	删除：     numberGame/bin/com/number/AdminOperation.class
+	删除：     numberGame/bin/com/number/GameStart.class
+	删除：     numberGame/bin/com/number/InputHelp.class
+	删除：     numberGame/bin/com/number/Menu.class
+	删除：     numberGame/bin/com/number/UserOperation.class
+	删除：     numberGame/src/com/number/AdminOperation.java
+	删除：     numberGame/src/com/number/GameStart.java
+	删除：     numberGame/src/com/number/InputHelp.java
+	删除：     numberGame/src/com/number/Menu.java
+	删除：     numberGame/src/com/number/UserOperation.java
+
+修改尚未加入提交
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+Everything up-to-date
+moyu@moyu:~/JAVA$ git commit -m "init files"
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+尚未暂存以备提交的变更：
+	删除：     numberGame/.classpath
+	删除：     numberGame/.project
+	删除：     numberGame/.settings/org.eclipse.jdt.core.prefs
+	删除：     numberGame/bin/com/number/AdminOperation.class
+	删除：     numberGame/bin/com/number/GameStart.class
+	删除：     numberGame/bin/com/number/InputHelp.class
+	删除：     numberGame/bin/com/number/Menu.class
+	删除：     numberGame/bin/com/number/UserOperation.class
+	删除：     numberGame/src/com/number/AdminOperation.java
+	删除：     numberGame/src/com/number/GameStart.java
+	删除：     numberGame/src/com/number/InputHelp.java
+	删除：     numberGame/src/com/number/Menu.java
+	删除：     numberGame/src/com/number/UserOperation.java
+
+修改尚未加入提交
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ git commit -m "init files"
+[master d9ddd61] init files
+ 13 files changed, 379 deletions(-)
+ delete mode 100755 numberGame/.classpath
+ delete mode 100755 numberGame/.project
+ delete mode 100755 numberGame/.settings/org.eclipse.jdt.core.prefs
+ delete mode 100755 numberGame/bin/com/number/AdminOperation.class
+ delete mode 100755 numberGame/bin/com/number/GameStart.class
+ delete mode 100755 numberGame/bin/com/number/InputHelp.class
+ delete mode 100755 numberGame/bin/com/number/Menu.class
+ delete mode 100755 numberGame/bin/com/number/UserOperation.class
+ delete mode 100755 numberGame/src/com/number/AdminOperation.java
+ delete mode 100755 numberGame/src/com/number/GameStart.java
+ delete mode 100755 numberGame/src/com/number/InputHelp.java
+ delete mode 100755 numberGame/src/com/number/Menu.java
+ delete mode 100755 numberGame/src/com/number/UserOperation.java
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+对象计数中: 2, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (2/2), 完成.
+写入对象中: 100% (2/2), 223 bytes | 0 bytes/s, 完成.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/King0916/JAVA.git
+   0232b92..d9ddd61  master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+moyu@moyu:~/JAVA$ git add .
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git commit -m "init files"
+[master a20b93b] init files
+ 1 file changed, 5 insertions(+)
+ create mode 100644 "git \345\220\214\346\255\245\346\226\271\346\263\225.txt"
+moyu@moyu:~/JAVA$ 
+moyu@moyu:~/JAVA$ git push -u origin master
+Username for 'https://github.com': King0916
+Password for 'https://King0916@github.com': 
+对象计数中: 3, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 418 bytes | 0 bytes/s, 完成.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/King0916/JAVA.git
+   d9ddd61..a20b93b  master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+moyu@moyu:~/JAVA$ 
